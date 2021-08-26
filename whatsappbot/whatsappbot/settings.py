@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
-
+APPEND_SLASH = False
 # Application definition
 
 INSTALLED_APPS = [
