@@ -11,7 +11,7 @@ def index(request):
         msg = resp.message()
 
         if incoming_msg == 'hello':
-            response = "*Hi! I am the Quarantine Bot*"
+            response = "*Hi! I am the Dyneryte Bot*"
             msg.body(response)
 
         return HttpResponse(str(resp))
