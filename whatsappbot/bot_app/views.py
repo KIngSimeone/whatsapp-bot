@@ -2,6 +2,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 from django.http import HttpResponse
 
 def index(request):
+    ("orint setup")
     if request.method == 'POST':
         # retrieve incoming message from POST request in lowercase
         incoming_msg = request.POST['Body'].lower()
