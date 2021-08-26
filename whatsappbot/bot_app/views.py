@@ -1,4 +1,5 @@
 from twilio.twiml.messaging_response import MessagingResponse
+from django.http import HttpResponse
 
 def index(request):
     if request.method == 'POST':
@@ -8,3 +9,9 @@ def index(request):
         # create Twilio XML response
         resp = MessagingResponse()
         msg = resp.message()
+
+        if incoming_msg == 'hello':
+            response = "*Hi! I am the Quarantine Bot*"
+            msg.body(response)
+
+        return HttpResponse(str(resp))
