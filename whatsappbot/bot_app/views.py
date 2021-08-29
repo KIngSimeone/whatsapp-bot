@@ -13,7 +13,12 @@ def index(request):
         msg = resp.message()
 
         if incoming_msg == 'hello':
-            response = "*Hi! Welcome to dyneryte I am Shola* Select from below actions to perform an action, If this is your first time get started kindly type in your phone number"
+            response = """*Hi! Welcome to dyneryte I am Shola* Select from below actions to perform an action, If this is your first time get started kindly type in your phone number.
+                        1.Add a Student
+                        2.Delete a Student
+                        3.Look Up Student Record
+                        4.Exit/Quit
+                        """
             msg.body(response)
             phone = request.POST['Body'].lower()
             print(phone)
