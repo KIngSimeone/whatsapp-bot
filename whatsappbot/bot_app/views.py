@@ -13,7 +13,7 @@ def index(request):
         msg = resp.message()
 
         if incoming_msg == 'hello':
-            response = """*Hi! Welcome to dyneryte I am Shola* Select from below actions to perform an action, If this is your first time get started kindly type in your phone number.
+            response = """*Hi! Welcome to dyneryte I am Shola* Select from below actions to perform an action, If this is your first time get started kindly set phone number.
             1. Set number
             2. Enter location
             2. Create Order
@@ -24,8 +24,12 @@ def index(request):
             msg.body(response)
             phone = request.POST['Body'].lower()
             print(phone)
+        
+        if incoming_msg == '1':
+            response = "Kindly input your phone number"
+            msg.body(response)
 
-        if incoming_msg.startswith('+'):
+        if incoming_msg.startswith('0'):
             response = "Thanks for registering your number with us, kindly input your location next"
             msg.body(response)
 
