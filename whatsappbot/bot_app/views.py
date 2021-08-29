@@ -14,11 +14,13 @@ def index(request):
 
         if incoming_msg == 'hello':
             response = """*Hi! Welcome to dyneryte I am Shola* Select from below actions to perform an action, If this is your first time get started kindly type in your phone number.
-                        1.Add a Student
-                        2.Delete a Student
-                        3.Look Up Student Record
-                        4.Exit/Quit
-                        """
+            1. Set number
+            2. Enter location
+            2. Create Order
+            3. See Order Status
+            4. Enter location
+            5. Search Menu
+            """
             msg.body(response)
             phone = request.POST['Body'].lower()
             print(phone)
