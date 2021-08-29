@@ -13,9 +13,14 @@ def index(request):
         msg = resp.message()
 
         if incoming_msg == 'hello':
-            response = "*Hi! Welcome to dyneryte* To get started kindly type in your phone number"
+            response = "*Hi! Welcome to dyneryte I am Shola* Select from below actions to perform an action, If this is your first time get started kindly type in your phone number"
             msg.body(response)
             phone = request.POST['Body'].lower()
-            print(phone)     
+            print(phone)
+
+        if incoming_msg.startswith('+'):
+            response = "Thanks for registering your number with us, kindly input your location next"
+            msg.body(response)
+
 
         return HttpResponse(str(resp))
